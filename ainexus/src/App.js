@@ -1,10 +1,12 @@
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import { HomePage } from './pages/HomePage';
+
 
 function App() {
   return (
-    <div className="bg-red-500">
-      Hello
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+    </Routes>
   );
 }
 
