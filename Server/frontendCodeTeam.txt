@@ -1,0 +1,127 @@
+import React, { useState } from "react";
+
+const RegistrationForm = () => {
+    const [user1, setUser1] = useState({ name: "", email: "", college: "" });
+    const [user2, setUser2] = useState({ name: "", email: "", college: "" });
+    const [user1Image, setUser1Image] = useState(null);
+    const [user2Image, setUser2Image] = useState(null);
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData();
+
+        // Append User 1 data and image
+        formData.append("user1[name]", user1.name);
+        formData.append("user1[email]", user1.email);
+        formData.append("user1[college]", user1.college);
+        formData.append("user1[image]", user1Image);
+
+        // Append User 2 data and image if present
+        if (user2.name || user2.email || user2.college) {
+            formData.append("user2[name]", user2.name);
+            formData.append("user2[email]", user2.email);
+            formData.append("user2[college]", user2.college);
+            if (user2Image) {
+                formData.append("user2[image]", user2Image);
+            }
+        }
+
+        try {
+            const response = await fetch("http://<your-server-url>/register", {
+                method: "POST",
+                body: formData,
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                alert(result.message);
+            } else {
+                alert(result.message || "Registration failed");
+            }
+        } catch (error) {
+            console.error("Error during registration:", error);
+            alert("An error occurred while submitting the form.");
+        }
+    };
+
+    return (
+        <form onSubmit={handleSubmit} encType="multipart/form-data">
+            <h3>User 1</h3>
+            <label>
+                Name:
+                <input
+                    type="text"
+                    value={user1.name}
+                    onChange={(e) => setUser1({ ...user1, name: e.target.value })}
+                    required
+                />
+            </label>
+            <label>
+                Email:
+                <input
+                    type="email"
+                    value={user1.email}
+                    onChange={(e) => setUser1({ ...user1, email: e.target.value })}
+                    required
+                />
+            </label>
+            <label>
+                College:
+                <input
+                    type="text"
+                    value={user1.college}
+                    onChange={(e) => setUser1({ ...user1, college: e.target.value })}
+                    required
+                />
+            </label>
+            <label>
+                Image:
+                <input
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => setUser1Image(e.target.files[0])}
+                    required
+                />
+            </label>
+
+            <h3>User 2 (Optional)</h3>
+            <label>
+                Name:
+                <input
+                    type="text"
+                    value={user2.name}
+                    onChange={(e) => setUser2({ ...user2, name: e.target.value })}
+                />
+            </label>
+            <label>
+                Email:
+                <input
+                    type="email"
+                    value={user2.email}
+                    onChange={(e) => setUser2({ ...user2, email: e.target.value })}
+                />
+            </label>
+            <label>
+                College:
+                <input
+                    type="text"
+                    value={user2.college}
+                    onChange={(e) => setUser2({ ...user2, college: e.target.value })}
+                />
+            </label>
+            <label>
+                Image:
+                <input
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => setUser2Image(e.target.files[0])}
+                />
+            </label>
+
+            <button type="submit">Register</button>
+        </form>
+    );
+};
+
+export default RegistrationForm;
