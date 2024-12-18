@@ -1,5 +1,5 @@
 const multer = require("multer");
-const { User, Team } = require("../models/User");
+const { User, Team , Counter} = require("../models/User");
 
 const storage = multer.memoryStorage() ;
 const upload = multer({ storage }) ;
@@ -84,8 +84,18 @@ exports.register = async (req, res) => {
         // Save users and create team
         const userInstances = await User.insertMany(users);
 
+        // Generate a sequential team ID
+        const counter = await Counter.findOneAndUpdate(
+            { name: "teamId" }, // Identifier for the counter
+            { $inc: { seq: 1 } }, // Increment the sequence by 1
+            { new: true, upsert: true } // Create if it doesn't exist
+        );
+
+        const teamId = counter.seq;
         const isSolo = users.length === 1;
+
         const team = await Team.create({
+            _id: teamId,
             users: userInstances,
             type: isSolo ? "solo" : "team",
         });

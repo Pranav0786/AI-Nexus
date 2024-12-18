@@ -34,7 +34,13 @@ const teamSchema = new mongoose.Schema({
     },
 });
 
+const counterSchema = new mongoose.Schema({
+    name: { type: String, required: true, unique: true },
+    seq: { type: Number, default: 1 }, // Starting sequence
+});
+
 const User = mongoose.model("User", userSchema);
 const Team = mongoose.model("Team", teamSchema);
+const Counter = mongoose.model("Counter", counterSchema);
 
-module.exports = { User, Team };
+module.exports = { User, Team , Counter};
