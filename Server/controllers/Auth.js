@@ -1,8 +1,8 @@
 const multer = require("multer");
 const { User, Team } = require("../models/User");
 
-const storage = multer.memoryStorage();
-const upload = multer({ storage });
+const storage = multer.memoryStorage() ;
+const upload = multer({ storage }) ;
 
 // Middleware to handle file uploads
 exports.uploadMiddleware = upload.fields([
