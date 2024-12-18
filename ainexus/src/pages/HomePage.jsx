@@ -1,5 +1,5 @@
 import React from 'react'
-// import { Navbar } from '../components/Navbar'
+import  Navbar  from '../components/Navbar'
 // import { HeroSection } from './HeroSection'
 // import { EventDetails } from './EventDetails'
 import { Registration } from './Registration'
@@ -9,7 +9,7 @@ import { Registration } from './Registration'
 export const HomePage = () => {
   return (
     <div>
-        {/* <Navbar /> */}
+        <Navbar />
         {/* <HeroSection />
         <EventDetails /> */}
         <Registration />
