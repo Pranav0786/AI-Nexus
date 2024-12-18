@@ -13,6 +13,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    phone: {
+        type: Number,
+        required: true ,
+    },
     image: {
         type: String, // Store the Base64-encoded image string
         required: true,

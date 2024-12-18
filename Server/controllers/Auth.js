@@ -21,7 +21,7 @@ exports.register = async (req, res) => {
             });
         }
 
-        // Parse user data
+        // Parse user data and prepare users array
         const users = [];
 
         const user1Data = JSON.parse(user1);
@@ -31,6 +31,13 @@ exports.register = async (req, res) => {
             return res.status(400).json({
                 success: false,
                 message: "Image for user1 is required.",
+            });
+        }
+
+        if (!user1Data.phone || isNaN(user1Data.phone)) {
+            return res.status(400).json({
+                success: false,
+                message: "Valid phone number for user1 is required.",
             });
         }
 
@@ -47,6 +54,13 @@ exports.register = async (req, res) => {
                 return res.status(400).json({
                     success: false,
                     message: "Image for user2 is required.",
+                });
+            }
+
+            if (!user2Data.phone || isNaN(user2Data.phone)) {
+                return res.status(400).json({
+                    success: false,
+                    message: "Valid phone number for user2 is required.",
                 });
             }
 
@@ -91,6 +105,7 @@ exports.register = async (req, res) => {
         });
     }
 };
+
 
 
 exports.getUserDetails = async (req, res) => {
