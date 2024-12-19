@@ -1,5 +1,6 @@
 const multer = require("multer");
 const { User, Team } = require("../models/User");
+const { sendEmail } = require("./MailSender")
 
 const storage = multer.memoryStorage() ;
 const upload = multer({ storage }) ;
@@ -115,6 +116,15 @@ exports.register = async (req, res) => {
             transactionId ,
             paymentScreenshot: paymentScreenshot.buffer.toString("base64"),
         });
+
+        // Send emails to all registered users
+        for (const user of users) {
+            const emailText = `Dear ${user.name},\n\nCongratulations! You have successfully registered ${
+                isSolo ? "as a solo participant" : "as part of a team"
+            }. Your Team ID is 1.`;
+
+            await sendEmail(user.email, "Team Registration Confirmation", emailText);
+        }
 
         return res.status(200).json({
             success: true,
