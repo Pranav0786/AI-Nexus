@@ -32,6 +32,14 @@ const teamSchema = new mongoose.Schema({
         type: String, // "solo" or "team"
         required: true,
     },
+    transactionId: {
+        type: String, // Unique identifier for payment
+        required: true,
+    },
+    paymentScreenshot: {
+        type: String, // Base64-encoded image of the screenshot
+        required: true,
+    },
 });
 
 const counterSchema = new mongoose.Schema({

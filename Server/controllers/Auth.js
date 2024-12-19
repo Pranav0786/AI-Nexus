@@ -1,5 +1,5 @@
 const multer = require("multer");
-const { User, Team , Counter} = require("../models/User");
+const { User, Team } = require("../models/User");
 
 const storage = multer.memoryStorage() ;
 const upload = multer({ storage }) ;
@@ -8,16 +8,30 @@ const upload = multer({ storage }) ;
 exports.uploadMiddleware = upload.fields([
     { name: "user1Image", maxCount: 1 },
     { name: "user2Image", maxCount: 1 },
+    { name: "paymentScreenshot", maxCount: 1 },
 ]);
 
 exports.register = async (req, res) => {
     try {
-        const { user1, user2 } = req.body;
+        const { user1, user2 , transactionId } = req.body;
+        const paymentScreenshot = req.files["paymentScreenshot"]?.[0];
 
         if (!user1) {
             return res.status(400).json({
                 success: false,
                 message: "At least one user is required to register.",
+            });
+        }
+        if (!transactionId) {
+            return res.status(400).json({
+                success: false,
+                message: "Transaction ID is required.",
+            });
+        }
+        if (!paymentScreenshot) {
+            return res.status(400).json({
+                success: false,
+                message: "Payment screenshot is required.",
             });
         }
 
@@ -85,19 +99,21 @@ exports.register = async (req, res) => {
         const userInstances = await User.insertMany(users);
 
         // Generate a sequential team ID
-        const counter = await Counter.findOneAndUpdate(
-            { name: "teamId" }, // Identifier for the counter
-            { $inc: { seq: 1 } }, // Increment the sequence by 1
-            { new: true, upsert: true } // Create if it doesn't exist
-        );
+        // const counter = await Counter.findOneAndUpdate(
+        //     { name: "teamId" }, // Identifier for the counter
+        //     { $inc: { seq: 1 } }, // Increment the sequence by 1
+        //     { new: true, upsert: true } // Create if it doesn't exist
+        // );
 
-        const teamId = counter.seq;
+        // const teamId = counter.seq;
         const isSolo = users.length === 1;
 
         const team = await Team.create({
-            _id: teamId,
+            // _id: teamId,
             users: userInstances,
             type: isSolo ? "solo" : "team",
+            transactionId ,
+            paymentScreenshot: paymentScreenshot.buffer.toString("base64"),
         });
 
         return res.status(200).json({
