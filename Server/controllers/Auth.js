@@ -16,7 +16,7 @@ async function getNextTeamId() {
     const counter = await Counter.findOneAndUpdate(
         { name: "teamId" },
         { $inc: { seq: 1 } },
-        { new: true, upsert: true } // Create the document if it doesn't exist
+        { new: true, upsert: true } 
     );
     return counter.seq;
 }
@@ -57,14 +57,12 @@ exports.register = async (req, res) => {
                 message: "Image for user1 is required.",
             });
         }
-
         if (!user1Data.phone || isNaN(user1Data.phone)) {
             return res.status(400).json({
                 success: false,
                 message: "Valid phone number for user1 is required.",
             });
         }
-
         users.push({
             ...user1Data,
             image: user1Image.buffer.toString("base64"),
@@ -80,14 +78,12 @@ exports.register = async (req, res) => {
                     message: "Image for user2 is required.",
                 });
             }
-
             if (!user2Data.phone || isNaN(user2Data.phone)) {
                 return res.status(400).json({
                     success: false,
                     message: "Valid phone number for user2 is required.",
                 });
             }
-
             users.push({
                 ...user2Data,
                 image: user2Image.buffer.toString("base64"),
@@ -108,9 +104,7 @@ exports.register = async (req, res) => {
         // Save users and create team
         const userInstances = await User.insertMany(users);
 
-
         const isSolo = users.length === 1;
-
         const teamId = await getNextTeamId();
 
         const team = await Team.create({
@@ -127,7 +121,7 @@ exports.register = async (req, res) => {
                 isSolo ? "as a solo participant" : "as part of a team"
             }. Your Team ID is ${team.teamId}.`;
 
-            await sendEmail(user.email, "Team Registration Confirmation", emailText);
+            await sendEmail(user.email, `Welcome to AI Nexus - Registration Confirmed`, emailText);
         }
 
         return res.status(200).json({
