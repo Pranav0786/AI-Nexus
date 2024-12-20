@@ -40,12 +40,18 @@ const teamSchema = new mongoose.Schema({
         type: String, // Base64-encoded image of the screenshot
         required: true,
     },
+    teamId: {
+        type: Number, 
+        required: true,
+        unique: true, 
+    },
 });
 
 const counterSchema = new mongoose.Schema({
     name: { type: String, required: true, unique: true },
-    seq: { type: Number, default: 1 }, // Starting sequence
+    seq: { type: Number, default: 0 },
 });
+
 
 const User = mongoose.model("User", userSchema);
 const Team = mongoose.model("Team", teamSchema);

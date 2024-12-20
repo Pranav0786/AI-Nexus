@@ -1,5 +1,5 @@
 const multer = require("multer");
-const { User, Team } = require("../models/User");
+const { User, Team , Counter} = require("../models/User");
 const { sendEmail } = require("./MailSender")
 
 const storage = multer.memoryStorage() ;
@@ -11,6 +11,15 @@ exports.uploadMiddleware = upload.fields([
     { name: "user2Image", maxCount: 1 },
     { name: "paymentScreenshot", maxCount: 1 },
 ]);
+
+async function getNextTeamId() {
+    const counter = await Counter.findOneAndUpdate(
+        { name: "teamId" },
+        { $inc: { seq: 1 } },
+        { new: true, upsert: true } // Create the document if it doesn't exist
+    );
+    return counter.seq;
+}
 
 exports.register = async (req, res) => {
     try {
@@ -99,29 +108,24 @@ exports.register = async (req, res) => {
         // Save users and create team
         const userInstances = await User.insertMany(users);
 
-        // Generate a sequential team ID
-        // const counter = await Counter.findOneAndUpdate(
-        //     { name: "teamId" }, // Identifier for the counter
-        //     { $inc: { seq: 1 } }, // Increment the sequence by 1
-        //     { new: true, upsert: true } // Create if it doesn't exist
-        // );
 
-        // const teamId = counter.seq;
         const isSolo = users.length === 1;
 
+        const teamId = await getNextTeamId();
+
         const team = await Team.create({
-            // _id: teamId,
             users: userInstances,
             type: isSolo ? "solo" : "team",
             transactionId ,
             paymentScreenshot: paymentScreenshot.buffer.toString("base64"),
+            teamId,
         });
 
         // Send emails to all registered users
         for (const user of users) {
             const emailText = `Dear ${user.name},\n\nCongratulations! You have successfully registered ${
                 isSolo ? "as a solo participant" : "as part of a team"
-            }. Your Team ID is 1.`;
+            }. Your Team ID is ${team.teamId}.`;
 
             await sendEmail(user.email, "Team Registration Confirmation", emailText);
         }
