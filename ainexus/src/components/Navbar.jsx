@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../assests/logo.jpeg';
+import logo from '../assests/logo2.png';
 import './Navbar.css';
 import { Link } from 'react-scroll'; 
 
