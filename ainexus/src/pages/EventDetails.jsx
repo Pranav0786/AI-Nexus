@@ -1,11 +1,11 @@
-
-import { useState } from 'react'
+import { useState  } from 'react'
 import { FaSortDown , FaSortUp } from "react-icons/fa";
 
 export default function EventDetails() {
   const [expandedSession, setExpandedSession] = useState("")
   const [expandedPrize, setExpandedPrize] = useState(false)
   const [expandedObjectives, setExpandedObjectives] = useState(false)
+
 
   const sessions = [
     {
@@ -90,7 +90,9 @@ export default function EventDetails() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-red-950 to-gray-950">
-      <div className="container mx-auto px-4 py-12">
+      <div
+      data-aos="fade-up"
+      className="container mx-auto px-4 py-12 ">
         {/* Event Header */}
         <div className="text-center mb-12">
           <span className="inline-block px-4 py-1 rounded-full bg-red-500/10 text-red-400 text-sm mb-4">
@@ -106,7 +108,7 @@ export default function EventDetails() {
         </div>
 
         {/* Main Event Card */}
-        <div className="max-w-4xl mx-auto">
+        <div data-aos="fade-up" className="max-w-4xl mx-auto">
           <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-red-950">
             {/* Event Details Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -125,12 +127,13 @@ export default function EventDetails() {
             </div>
 
             {/* Objectives Section */}
-            <div className="mb-8">
+            <div data-aos="fade-up" className="mb-8">
               <button 
                 onClick={() => setExpandedObjectives(!expandedObjectives)}
                 className="w-full text-left bg-red-950/20 rounded-lg p-6 border border-red-950/50 hover:bg-red-950/30 transition-colors"
               >
-                <div className="flex justify-between items-center">
+                <div 
+                className="flex justify-between items-center">
                   <h2 className="text-2xl font-bold text-red-400">Event Objectives</h2>
                   <span className="text-red-400">
                     {expandedObjectives 
@@ -152,10 +155,13 @@ export default function EventDetails() {
             </div>
 
             {/* Sessions Timeline */}
-            <div className="mb-8 space-y-4">
+            <div 
+            data-aos="fade-up"
+            className="mb-8 space-y-4">
               <h2 className="text-2xl font-bold text-red-400 mb-6 text-center">Event Schedule</h2>
               {sessions.map((session, index) => (
-                <div key={index} className="bg-red-950/20 rounded-lg border border-red-950/50">
+                <div key={index} data-aos="fade-up"
+                className="bg-red-950/20 rounded-lg border border-red-950/50">
                   <button 
                     onClick={() => setExpandedSession(expandedSession === index ? null : index)}
                     className="w-full text-left p-6 hover:bg-red-950/30 transition-colors"
@@ -230,11 +236,15 @@ export default function EventDetails() {
 
           {/* Additional Info Cards */}
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-red-950">
+            <div 
+            data-aos="fade-left"
+            className="bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-red-950">
               <h3 className="text-xl font-semibold text-red-400 mb-3">Team Size</h3>
               <p className="text-gray-400">1-2 members per team</p>
             </div>
-            <div className="bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-red-950">
+            <div 
+            data-aos="fade-right"
+            className="bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-red-950">
               <h3 className="text-xl font-semibold text-red-400 mb-3">Requirements</h3>
               <p className="text-gray-400">Basic programming knowledge & laptop</p>
             </div>
