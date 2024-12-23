@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Registration = () => {
   const [addUser2, setAddUser2] = useState(false);
@@ -23,7 +25,7 @@ export const Registration = () => {
 
   const handleInputChange = (e, user = null, field) => {
     const value = field === 'image' || field === 'paymentScreenshot' ? e.target.files[0] : e.target.value;
-  
+
     if (user) {
       setFormData((prev) => ({
         ...prev,
@@ -43,7 +45,7 @@ export const Registration = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     const formDataToSend = new FormData();
-    
+
     formDataToSend.append('user1', JSON.stringify(formData.user1));
     formDataToSend.append('user1Image', formData.user1.image);
 
@@ -63,22 +65,29 @@ export const Registration = () => {
 
       const result = await response.json();
       if (result.success) {
-        alert(result.message);
+        toast.success(result.message || 'Registration successful!');
+        setFormData({
+          user1: { name: '', email: '', college: '', phone: '', image: null },
+          user2: { name: '', email: '', college: '', phone: '', image: null },
+          transactionId: '',
+          paymentScreenshot: null,
+        });
+        setAddUser2(false);
       } else {
-        alert(result.message);
+        toast.error(result.message || 'Registration failed!');
       }
     } catch (error) {
       console.error('Error during registration:', error);
+      toast.error('Something went wrong. Please try again.');
     }
   };
 
   return (
     <div className="bg-red-300 min-h-screen w-full flex mx-auto items-center justify-center">
-      {/* Registration Form Container */}
       <div className="bg-gray-700 w-11/12 md:w-8/12 lg:w-6/12 p-6 rounded-md shadow-lg">
+        <ToastContainer />
         <h1 className="text-white text-2xl font-bold mb-4">Get Registered</h1>
         <form onSubmit={handleFormSubmit} className="space-y-4">
-          {/* User 1 Fields */}
           <div>
             <h2 className="text-white font-semibold mb-2">User 1 Details</h2>
             <input
@@ -122,7 +131,6 @@ export const Registration = () => {
             />
           </div>
 
-          {/* User 2 Toggle and Fields */}
           <div>
             <button
               type="button"
@@ -177,7 +185,6 @@ export const Registration = () => {
             )}
           </div>
 
-          {/* Transaction ID and Payment Screenshot */}
           <div>
             <h2 className="text-white font-semibold mb-2">Payment Details</h2>
             <input
@@ -197,7 +204,6 @@ export const Registration = () => {
             />
           </div>
 
-          {/* Submit Button */}
           <button type="submit" className="w-full bg-green-500 text-white py-2 rounded">Submit</button>
         </form>
       </div>

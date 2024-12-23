@@ -1,3 +1,0 @@
-const emailText = `Dear ${user.name},\n\nCongratulations! You have successfully registered ${
-                isSolo ? "as a solo participant" : "as part of a team"
-            }. Your Team ID is ${team.teamId}.`;

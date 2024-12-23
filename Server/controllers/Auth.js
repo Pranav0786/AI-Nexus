@@ -118,10 +118,7 @@ exports.register = async (req, res) => {
 
         // Send emails to all registered users
         for (const user of users) {
-            const emailText = `Dear ${user.name}, \n\n${first} \n\nYou have successfully registered ${
-                isSolo ? "as a solo participant" : "as part of a team"
-            }.\n${second}: ${team.teamId} \n${third}${team.teamId}. ${forth} \n\n${fifth} \n${sixth} \n${seventh} \n${eighth} \n${ninth} \n${tenth} \n${eleventh} \n\n${twelth} \n${thirteenth} \n${fourteenth} \n${fifteenth} \n${sixteenth} \n${seventeenth} \n\n${eighteenth} \n\n${nineteenth} \n${twentieth} \n\n${twentyFirst} \n${twentySecond}
-            `;
+            const emailText = `Dear ${user.name}, \n\n${first} \n\n${second}: ${team.teamId} \n${third}${team.teamId}. ${forth} \n\n${fifth} \n${sixth} \n${seventh} \n${eighth} \n${ninth} \n${tenth} \n${eleventh} \n\n${twelth} \n${thirteenth} \n${fourteenth} \n${fifteenth} \n${sixteenth} \n${seventeenth} \n\n${eighteenth} \n\n${nineteenth} \n${twentieth} \n\n${twentyFirst} \n${twentySecond}`;
             await sendEmail(user.email, `Welcome to AI Nexus - Registration Confirmed`, emailText);
         }
 
