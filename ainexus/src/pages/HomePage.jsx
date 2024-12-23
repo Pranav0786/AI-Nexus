@@ -13,7 +13,7 @@ export const HomePage = () => {
         <Navbar />
         <Header />
         {/* <HeroSection /> */}
-        <EventDetails />
+        {/* <EventDetails /> */}
         <Registration />
         {/* <Sponsors/>
         <FAQ /> */}

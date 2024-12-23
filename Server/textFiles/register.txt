@@ -21,23 +21,15 @@ export const Registration = () => {
     paymentScreenshot: null,
   });
 
-  const handleInputChange = (e, user = null, field) => {
+  const handleInputChange = (e, user, field) => {
     const value = field === 'image' || field === 'paymentScreenshot' ? e.target.files[0] : e.target.value;
-  
-    if (user) {
-      setFormData((prev) => ({
-        ...prev,
-        [user]: {
-          ...prev[user],
-          [field]: value,
-        },
-      }));
-    } else {
-      setFormData((prev) => ({
-        ...prev,
+    setFormData((prev) => ({
+      ...prev,
+      [user]: {
+        ...prev[user],
         [field]: value,
-      }));
-    }
+      },
+    }));
   };
 
   const handleFormSubmit = async (e) => {
@@ -56,7 +48,7 @@ export const Registration = () => {
     formDataToSend.append('paymentScreenshot', formData.paymentScreenshot);
 
     try {
-      const response = await fetch('http://localhost:5000/api/v1/register', {
+      const response = await fetch('/api/register', {
         method: 'POST',
         body: formDataToSend,
       });

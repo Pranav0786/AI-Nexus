@@ -115,7 +115,8 @@ nav ul li {
 /* Media Queries for Responsiveness */
 @media(max-width: 1190px) {
     .logo img {
-        width: 70px;
+        width: 100px;
+        height: 50px;
     }
 
     .header-btns {
@@ -129,7 +130,7 @@ nav ul li {
     nav {
         justify-content: space-between;
         height: 65px;
-        padding: 0px 30px;
+        padding: 0px ;
     }
 
     .menu {
