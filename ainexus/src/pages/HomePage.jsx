@@ -4,8 +4,8 @@ import  Navbar  from '../components/Navbar'
 import EventDetails from './EventDetails'
 import { Registration } from './Registration'
 import Header from '../components/Header'
-// import { Sponsors } from './Sponsors'
-// import { FAQ } from './FAQ'
+import Sponsors from './Sponsors'
+import  FAQ  from './FAQ'
 
 export const HomePage = () => {
   return (
@@ -13,10 +13,10 @@ export const HomePage = () => {
         <Navbar />
         <Header />
         {/* <HeroSection /> */}
-        {/* <EventDetails /> */}
+        <EventDetails />
         <Registration />
-        {/* <Sponsors/>
-        <FAQ /> */}
+        <Sponsors/>
+        <FAQ />
     </div>
   )
 }

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import single from "../assests/single2.png";
+import double from "../assests/double2.png";
 
 export const Registration = () => {
   const [addUser2, setAddUser2] = useState(false);
@@ -83,17 +85,19 @@ export const Registration = () => {
   };
 
   return (
-    <div className="bg-red-300 min-h-screen w-full flex mx-auto items-center justify-center">
-      <div className="bg-gray-700 w-11/12 md:w-8/12 lg:w-6/12 p-6 rounded-md shadow-lg">
+    <div className="bg-white min-h-screen w-full flex mx-auto items-center justify-center">
+      <div className="relative m-10 bg-white bg-opacity-30 backdrop-blur-md p-6 rounded-md shadow-2xl border 
+      border-gray-300  w-11/12 md:w-8/12 lg:w-6/12">
         <ToastContainer />
-        <h1 className="text-white text-2xl font-bold mb-4">Get Registered</h1>
-        <form onSubmit={handleFormSubmit} className="space-y-4">
+        <h1 className="text-red-600 text-3xl font-extrabold mb-4 text-center">Get Registered</h1>
+        <form onSubmit={handleFormSubmit} className="space-y-6">
+          {/* User 1 */}
           <div>
-            <h2 className="text-white font-semibold mb-2">User 1 Details</h2>
+            <h2 className="text-gray-700 font-semibold mb-3">User 1 Details</h2>
             <input
               type="text"
               placeholder="Name"
-              className="w-full p-2 mb-2 rounded"
+              className="w-full p-3 mb-3 rounded border border-gray-300 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100"
               value={formData.user1.name}
               onChange={(e) => handleInputChange(e, 'user1', 'name')}
               required
@@ -101,7 +105,7 @@ export const Registration = () => {
             <input
               type="email"
               placeholder="Email"
-              className="w-full p-2 mb-2 rounded"
+              className="w-full p-3 mb-3 rounded border border-gray-300 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100"
               value={formData.user1.email}
               onChange={(e) => handleInputChange(e, 'user1', 'email')}
               required
@@ -109,7 +113,7 @@ export const Registration = () => {
             <input
               type="text"
               placeholder="College"
-              className="w-full p-2 mb-2 rounded"
+              className="w-full p-3 mb-3 rounded border border-gray-300 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100"
               value={formData.user1.college}
               onChange={(e) => handleInputChange(e, 'user1', 'college')}
               required
@@ -117,7 +121,7 @@ export const Registration = () => {
             <input
               type="number"
               placeholder="Phone"
-              className="w-full p-2 mb-2 rounded"
+              className="w-full p-3 mb-3 rounded border border-gray-300 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100"
               value={formData.user1.phone}
               onChange={(e) => handleInputChange(e, 'user1', 'phone')}
               required
@@ -125,27 +129,28 @@ export const Registration = () => {
             <input
               type="file"
               accept="image/*"
-              className="w-full p-2 mb-2 rounded bg-white"
+              className="w-full p-3 mb-3 rounded border  border-gray-300 bg-white cursor-pointer"
               onChange={(e) => handleInputChange(e, 'user1', 'image')}
               required
             />
           </div>
 
+          {/* User 2 */}
           <div>
             <button
               type="button"
-              className="bg-blue-500 text-white px-4 py-2 rounded"
+              className="bg-gradient-to-r from-red-600 via-red-800 to-black text-white px-6 py-2 rounded"
               onClick={() => setAddUser2(!addUser2)}
             >
               {addUser2 ? 'Remove User 2' : 'Add User 2'}
             </button>
             {addUser2 && (
-              <div className="mt-4">
-                <h2 className="text-white font-semibold mb-2">User 2 Details</h2>
+              <div className="mt-6">
+                <h2 className="text-gray-700 font-semibold mb-3">User 2 Details</h2>
                 <input
                   type="text"
                   placeholder="Name"
-                  className="w-full p-2 mb-2 rounded"
+                  className="w-full p-3 mb-3 rounded border border-gray-300 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100"
                   value={formData.user2.name}
                   onChange={(e) => handleInputChange(e, 'user2', 'name')}
                   required
@@ -153,7 +158,7 @@ export const Registration = () => {
                 <input
                   type="email"
                   placeholder="Email"
-                  className="w-full p-2 mb-2 rounded"
+                  className="w-full p-3 mb-3 rounded border border-gray-300 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100"
                   value={formData.user2.email}
                   onChange={(e) => handleInputChange(e, 'user2', 'email')}
                   required
@@ -161,7 +166,7 @@ export const Registration = () => {
                 <input
                   type="text"
                   placeholder="College"
-                  className="w-full p-2 mb-2 rounded"
+                  className="w-full p-3 mb-3 rounded border border-gray-300 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100"
                   value={formData.user2.college}
                   onChange={(e) => handleInputChange(e, 'user2', 'college')}
                   required
@@ -169,7 +174,7 @@ export const Registration = () => {
                 <input
                   type="number"
                   placeholder="Phone"
-                  className="w-full p-2 mb-2 rounded"
+                  className="w-full p-3 mb-3 rounded border border-gray-300 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100"
                   value={formData.user2.phone}
                   onChange={(e) => handleInputChange(e, 'user2', 'phone')}
                   required
@@ -177,7 +182,7 @@ export const Registration = () => {
                 <input
                   type="file"
                   accept="image/*"
-                  className="w-full p-2 mb-2 rounded bg-white"
+                  className="w-full p-3 mb-3 rounded border border-gray-300 bg-white cursor-pointer"
                   onChange={(e) => handleInputChange(e, 'user2', 'image')}
                   required
                 />
@@ -185,12 +190,18 @@ export const Registration = () => {
             )}
           </div>
 
+          {/* Payment */}
           <div>
-            <h2 className="text-white font-semibold mb-2">Payment Details</h2>
+            <h2 className="text-gray-700 font-semibold mb-3">Payment Details</h2>
+            <img
+              src={addUser2 ? double : single}
+              alt="Payment Illustration"
+              className="w-80 h-80 lg:ml-72 border-2 object-cover rounded-lg shadow-lg border-gray-300 mb-4"
+            />
             <input
               type="text"
               placeholder="Transaction ID"
-              className="w-full p-2 mb-2 rounded"
+              className="w-full p-3 mb-3 rounded border border-gray-300 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100"
               value={formData.transactionId}
               onChange={(e) => handleInputChange(e, null, 'transactionId')}
               required
@@ -198,13 +209,18 @@ export const Registration = () => {
             <input
               type="file"
               accept="image/*"
-              className="w-full p-2 mb-2 rounded bg-white"
+              className="w-full p-3 mb-3 rounded border border-gray-300 bg-white cursor-pointer"
               onChange={(e) => handleInputChange(e, null, 'paymentScreenshot')}
               required
             />
           </div>
 
-          <button type="submit" className="w-full bg-green-500 text-white py-2 rounded">Submit</button>
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-red-600 via-red-800 to-black text-white py-3 rounded font-bold text-lg"
+          >
+            Submit
+          </button>
         </form>
       </div>
     </div>

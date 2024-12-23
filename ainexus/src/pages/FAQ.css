@@ -1,0 +1,132 @@
+/* FAQ Section */
+.faq {
+    padding: 6rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 90%;
+  }
+  
+  .faq__title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    letter-spacing: 1px;
+  }
+  
+  .accordion__list {
+    display: grid;
+    grid-gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .accordion {
+    --accordion-padding: 2rem;
+    --accordion-right-padding: 6rem;
+  }
+  
+  .accordion__question {
+    background-color: #2c2c2c;
+    color: #fff;
+    padding: var(--accordion-padding);
+    padding-right: var(--accordion-right-padding);
+    font-size: 1.3rem;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    width: 100%;
+  }
+  
+  .accordion__question:hover {
+    background-color: #FF1414;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(255, 20, 20, 0.3);
+  }
+  
+  .accordion__icon {
+    font-size: 2.5rem; /* Increased size */
+    transition: transform 0.3s ease;
+  }
+  
+  .accordion__question:focus {
+    outline: 2px solid #FF1414;
+  }
+  
+  .accordion__answer {
+    background-color: #333333;  /* Different background color */
+    color: #fff;
+    padding: var(--accordion-padding);
+    font-size: 1.1rem;
+    display: none;
+    border-radius: 8px;
+    margin-top: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .accordion.active .accordion__answer {
+    display: block;
+    opacity: 1;
+    background-color: #444444; /* Slightly lighter shade for active answers */
+  }
+  
+  .accordion.active .accordion__icon {
+    transform: rotate(180deg);
+  }
+  
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 1190px) {
+    .faq {
+      padding: 4rem 1rem;
+    }
+  
+    .faq__title {
+      font-size: 2.5rem;
+    }
+  
+    .accordion__question {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 620px) {
+    .faq__title {
+      font-size: 1.7rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .accordion__question {
+      font-size: 1.1rem;
+    }
+  
+    .accordion__answer {
+      font-size: 1rem;
+    }
+  
+    .register-btn {
+      width: auto;
+      padding: 10px 20px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .faq__title {
+      font-size: 1.4rem;
+    }
+  
+    .accordion__question {
+      font-size: 1rem;
+    }
+  
+    .accordion__answer {
+      font-size: 0.9rem;
+    }
+  }
+  

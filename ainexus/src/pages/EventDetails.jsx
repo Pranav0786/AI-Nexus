@@ -89,7 +89,7 @@ export default function EventDetails() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-red-950 to-gray-950">
+    <div className="min-h-screen overflow-hidden bg-gradient-to-br from-black via-red-950 to-gray-950">
       <div
       data-aos="fade-up"
       className="container mx-auto px-4 py-12 ">
