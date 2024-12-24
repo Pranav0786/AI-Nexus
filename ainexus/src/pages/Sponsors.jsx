@@ -31,7 +31,7 @@ const sponsors = [
 
 const Sponsors = () => {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-black via-red-950 to-black relative overflow-hidden py-20">
+    <section id='sponsors' className="min-h-screen bg-gradient-to-br from-black via-red-950 to-black relative overflow-hidden py-20">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (

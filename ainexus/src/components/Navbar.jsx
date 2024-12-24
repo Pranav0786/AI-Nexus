@@ -17,7 +17,7 @@ function Navbar() {
   window.addEventListener('scroll', changeBackground);
 
   return (
-    <nav className={nav ? "nav active" : "nav"}>
+    <nav  className={nav ? "nav active" : "nav"}>
       {/* Logo on the Left */}
       <div className="logo">
         <Link to="#">
@@ -27,15 +27,15 @@ function Navbar() {
 
       {/* Centered Menu */}
       <ul className="menu">
-        <li><Link to="#" smooth={true}>Home</Link></li>
-        <li><Link to="#" smooth={true}>About</Link></li>
-        <li><Link to="#" smooth={true}>Sponsors</Link></li>
-        <li><Link to="#" smooth={true}>FAQ</Link></li>
+        <li><Link to="home" smooth={true}>Home</Link></li>
+        <li><Link to="about" smooth={true}>About</Link></li>
+        <li><Link to="sponsors" smooth={true}>Sponsors</Link></li>
+        <li><Link to="faq" smooth={true}>FAQ</Link></li>
       </ul>
 
       {/* Register Button on the Right */}
       <div>
-        <Link to="#" className="register-btn">Register</Link>
+        <Link to="register" smooth={true} className="register-btn">Register</Link>
       </div>
     </nav>
   );

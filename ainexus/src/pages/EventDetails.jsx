@@ -89,7 +89,7 @@ export default function EventDetails() {
   ]
 
   return (
-    <div className="min-h-screen overflow-hidden bg-gradient-to-br from-black via-red-950 to-gray-950">
+    <div id='about' className="min-h-screen overflow-hidden bg-gradient-to-br from-black via-red-950 to-gray-950">
       <div
       data-aos="fade-up"
       className="container mx-auto px-4 py-12 ">
@@ -102,8 +102,7 @@ export default function EventDetails() {
             AI NEXUS
           </h1>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            A dynamic two-day event diving deep into the world of Artificial Intelligence with Microsoft AI and Azure. 
-            Learn, build, and compete in this immersive hackathon experience!
+          AI Nexus is a transformative two-day event designed to empower you with cutting-edge skills in Artificial Intelligence. On Day 1, dive into the world of AI as you explore and learn to leverage powerful AI services from OpenAI and Azure AI. On Day 2, put your newfound knowledge to the test in an exciting hackathon, HACK AI BLITZ, where you'll implement what you've learned to solve real-world challenges. Learn first, then implement - because the future of AI starts here!
           </p>
         </div>
 

@@ -86,7 +86,7 @@ export const Registration = () => {
   };
 
   return (
-    <div className="bg-[rgb(132,153,165)] min-h-screen w-full flex flex-col mx-auto items-center justify-center">
+    <div id='register' className="bg-[rgb(132,153,165)] min-h-screen w-full flex flex-col mx-auto items-center justify-center">
       <div className='flex flex-col-reverse lg:flex-row items-center lg:w-11/12'>
         <div className="relative m-10 bg-white bg-opacity-30 backdrop-blur-md p-6 rounded-md shadow-2xl border 
         border-gray-300  w-11/12 md:w-8/12 lg:w-6/12">
@@ -128,7 +128,7 @@ export const Registration = () => {
                 onChange={(e) => handleInputChange(e, 'user1', 'phone')}
                 required
               />
-              <input
+              <input  
                 type="file"
                 accept="image/*"
                 className="w-full p-1 mb-3 rounded border  border-gray-300 bg-white cursor-pointer"
@@ -231,7 +231,7 @@ export const Registration = () => {
           <img
             src={regImage}
             alt="Payment Illustration"
-            className="h-full w-4/5  object-cover rounded-lg  border-gray-300 mb-4"
+            className="h-full w-3/5 object-cover rounded-lg  border-gray-300 mb-4"
           />
         </div>
       </div>
