@@ -11,13 +11,13 @@ function Header() {
                 </h1>
                 <p className={styles.details}>Where Innovation Meets Intelligence</p>
                 <div className={styles['header-btns']}>
-                <Link 
-                    to="register" 
-                    smooth={true} 
-                    className={styles['header-btn']}
-                >
-                    Register
-                </Link>
+                    <Link 
+                        to="register" 
+                        smooth={true} 
+                        className={styles['header-btn']}
+                    >
+                        REGISTER
+                    </Link>
                 </div>
             </div>
         </div>

@@ -24,7 +24,7 @@ const FAQ1 = () => {
   ];
 
   return (
-    <section id='FAQ1' className="FAQ1 m-10 w-10/12 lg:w-8/12 mx-auto">
+    <section id='FAQ1' className="FAQ1 m-10 w-10/12 lg:w-8/12 mx-auto ">
       <h2 className="text-4xl font-[Roboto] md:text-5xl font-bold text-red-400 mb-4 text-center">FAQS</h2>
       <div className="accordion__list space-y-4 ">
         {FAQ1Data.map((FAQ, index) => (

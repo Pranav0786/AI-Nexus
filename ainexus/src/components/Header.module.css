@@ -44,6 +44,8 @@
     margin: 0;
     letter-spacing: 2px;
     color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
 }
 
 .header-heading h1 span {
@@ -51,14 +53,17 @@
 }
 
 .header-heading .details {
-    font-size: 23px;
+    font-size: 2rem;
     color: #c5c5c5;
+    font-weight: 800;
+    font-family: 'Roboto', sans-serif;
 }
 
 .header-btns {
     display: flex;
     margin-top: 40px;
     justify-content: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 .header-btn {
@@ -81,6 +86,7 @@
     border: 2px solid #FF1414;
 }
 
+
 @media (max-width: 1190px) {
     .header-heading {
         left: 50%;
@@ -92,7 +98,8 @@
         font-size: 3rem;
     }
     .header-heading .details {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        font-weight: 800;
     }
 }
 

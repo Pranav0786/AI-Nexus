@@ -13,7 +13,7 @@ export const HomePage = () => {
         <Navbar />
         <Header />
         <EventDetails />
-        <div className='bg-[rgb(132,153,165)]'>
+        <div className='bg-[rgb(132,153,165)] rounded-t-xl'>
           <Registration />
           <Sponsors/>
         </div>
