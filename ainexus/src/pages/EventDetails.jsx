@@ -96,13 +96,10 @@ export default function EventDetails() {
       className="container mx-auto px-4 py-12 ">
         {/* Event Header */}
         <div className="text-center mb-12">
-          <span className="inline-block px-4 py-1 rounded-full bg-red-500/10 text-red-400 text-sm mb-4">
-            MICROSOFT LEARN STUDENT'S CLUB PRESENTS
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-red-400 mb-4">
+          <h1 className="text-4xl md:text-5xl font-[Roboto] drop-shadow-lg font-bold text-red-400 mb-4">
             AI NEXUS
           </h1>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto text-justify">
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto text-justify font-[Roboto]">
           AI Nexus is a transformative two-day event to empower you with cutting-edge AI skills. Explore powerful AI services from OpenAI and Azure AI, then apply your knowledge in the HACK AI BLITZ hackathon to solve real-world challenges. Learn first, then implement — the future of AI starts here!
           </p>
         </div>
@@ -134,7 +131,7 @@ export default function EventDetails() {
               >
                 <div 
                 className="flex justify-between items-center">
-                  <h2 className="text-2xl font-bold text-red-400">Event Objectives</h2>
+                  <h2 className="text-2xl font-bold text-red-400 font-[Roboto]">Event Objectives</h2>
                   <span className="text-red-400">
                     {expandedObjectives 
                     ? <FaSortUp className='mt-2' /> 
@@ -158,7 +155,7 @@ export default function EventDetails() {
             <div 
             data-aos="fade-up"
             className="mb-8 space-y-4">
-              <h2 className="text-2xl font-bold text-red-400 mb-6 text-center">Event Schedule</h2>
+              <h2 className="text-2xl font-bold text-red-400 mb-6 text-center font-[Roboto]">Event Schedule</h2>
               {sessions.map((session, index) => (
                 <div key={index} data-aos="fade-up"
                 className="bg-red-950/20 rounded-lg border border-red-950/50">
@@ -200,7 +197,7 @@ export default function EventDetails() {
                 className="w-full text-left bg-red-950/20 rounded-lg p-6 border border-red-950/50 hover:bg-red-950/30 transition-colors"
               >
                 <div className="flex justify-between items-center">
-                  <h3 className="text-xl font-semibold text-red-400">Microsoft Incentives</h3>
+                  <h3 className="text-xl font-semibold text-red-400 font-[Roboto]">Microsoft Incentives</h3>
                   <span className="text-red-400">
                     {expandedPrize 
                     ? <FaSortUp className='mt-2'/> 
@@ -223,7 +220,7 @@ export default function EventDetails() {
             {/* Registration */}
             <div className="text-center">
               <div className="mb-6">
-                <h3 className="text-xl font-semibold text-red-400 mb-2">Ready to Innovate?</h3>
+                <h3 className="text-xl font-semibold text-red-400 mb-2 font-[Roboto]">Ready to Innovate?</h3>
                 <p className="text-gray-400">Join us for this immersive AI learning experience</p>
               </div>
               <button 
@@ -244,13 +241,13 @@ export default function EventDetails() {
             <div 
             data-aos="fade-left"
             className="bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-red-950">
-              <h3 className="text-xl font-semibold text-red-400 mb-3">Team Size</h3>
+              <h3 className="text-xl font-semibold text-red-400 mb-3 font-[Roboto]">Team Size</h3>
               <p className="text-gray-400">1-2 members per team</p>
             </div>
             <div 
             data-aos="fade-right"
             className="bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-red-950">
-              <h3 className="text-xl font-semibold text-red-400 mb-3">Requirements</h3>
+              <h3 className="text-xl font-semibold text-red-400 mb-3 font-[Roboto]">Requirements</h3>
               <p className="text-gray-400">Basic programming knowledge & laptop</p>
             </div>
           </div>

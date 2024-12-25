@@ -13,8 +13,10 @@ export const HomePage = () => {
         <Navbar />
         <Header />
         <EventDetails />
-        <Registration />
-        <Sponsors/>
+        <div className='bg-[rgb(132,153,165)]'>
+          <Registration />
+          <Sponsors/>
+        </div>
         <FAQ />
         <Footer />
     </div>

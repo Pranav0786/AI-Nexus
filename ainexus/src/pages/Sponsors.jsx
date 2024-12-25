@@ -31,7 +31,7 @@ const sponsors = [
 
 const Sponsors = () => {
   return (
-    <section id='sponsors' className="min-h-screen bg-gradient-to-br from-black via-red-950 to-black relative overflow-hidden py-12">
+    <section id='sponsors' className="min-h-screen  relative overflow-hidden py-12">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
@@ -65,10 +65,10 @@ const Sponsors = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-500 to-red-300 bg-clip-text text-transparent mb-6">
-            Our Sponsors
+          <h1 className="text-4xl md:text-5xl font-extrabold font-[Roboto] drop-shadow-lg text-red-900 mb-4 uppercase">
+            Sponsors
           </h1>
-          <p className="text-red-300/80 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-gray-700 font-bold  text-lg md:text-xl max-w-2xl mx-auto">
             Partnering with industry leaders to drive innovation in artificial intelligence.
           </p>
         </motion.div>
