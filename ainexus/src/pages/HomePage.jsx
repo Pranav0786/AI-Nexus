@@ -6,7 +6,6 @@ import Header from '../components/Header'
 import Sponsors from './Sponsors'
 import  FAQ  from './FAQ'
 import Footer from '../components/Footer'
-import FAQ1 from './FAQ1'
 
 export const HomePage = () => {
   return (
@@ -17,7 +16,6 @@ export const HomePage = () => {
         <Registration />
         <Sponsors/>
         <FAQ />
-        <FAQ1 />
         <Footer />
     </div>
   )

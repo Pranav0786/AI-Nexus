@@ -1,4 +1,5 @@
 import { useState  } from 'react'
+import { Link } from 'react-scroll';
 import { FaSortDown , FaSortUp } from "react-icons/fa";
 
 export default function EventDetails() {
@@ -41,7 +42,7 @@ export default function EventDetails() {
         "Answer participant queries",
         "Cover any leftover topics",
         "Explain competition rules",
-        "Project ideation session"
+        "Real world case studies"
       ]
     },
     {
@@ -101,8 +102,8 @@ export default function EventDetails() {
           <h1 className="text-4xl md:text-5xl font-bold text-red-400 mb-4">
             AI NEXUS
           </h1>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-          AI Nexus is a transformative two-day event designed to empower you with cutting-edge skills in Artificial Intelligence. On Day 1, dive into the world of AI as you explore and learn to leverage powerful AI services from OpenAI and Azure AI. On Day 2, put your newfound knowledge to the test in an exciting hackathon, HACK AI BLITZ, where you'll implement what you've learned to solve real-world challenges. Learn first, then implement - because the future of AI starts here!
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto text-justify">
+          AI Nexus is a transformative two-day event to empower you with cutting-edge AI skills. Explore powerful AI services from OpenAI and Azure AI, then apply your knowledge in the HACK AI BLITZ hackathon to solve real-world challenges. Learn first, then implement — the future of AI starts here!
           </p>
         </div>
 
@@ -228,7 +229,12 @@ export default function EventDetails() {
               <button 
                 className="px-8 py-3 bg-red-950 text-red-400 rounded-full font-semibold hover:bg-red-900 transition-colors border border-red-900"
               >
-                Register for AI Nexus
+                <Link 
+                    to="register" 
+                    smooth={true} 
+                >
+                  Register for AI Nexus
+                </Link>
               </button>
             </div>
           </div>
