@@ -61,7 +61,7 @@ export const Registration = () => {
     formDataToSend.append('paymentScreenshot', formData.paymentScreenshot);
 
     try {
-      const response = await fetch('http://localhost:5000/api/v1/register', {
+      const response = await fetch('https://ai-nexus-3pk9.onrender.com/api/v1/register', {
         method: 'POST',
         body: formDataToSend,
       });
