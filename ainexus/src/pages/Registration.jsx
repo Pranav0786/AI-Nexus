@@ -144,7 +144,7 @@ export const Registration = () => {
                 className="bg-gradient-to-r from-red-600 via-red-800 to-black text-white px-6 py-2 rounded"
                 onClick={() => setAddUser2(!addUser2)}
               >
-                {addUser2 ? 'Remove User 2' : 'Add User 2'}
+                {addUser2 ? 'Remove Crew Member' : 'Add Crew Member'}
               </button>
               {addUser2 && (
                 <div className="mt-6">
