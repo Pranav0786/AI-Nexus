@@ -13,9 +13,9 @@ exports.tenth = "4. Participate in a fast-paced, dynamic hackathon to tackle rea
 exports.eleventh = "5. Team up with other participants, innovate, and compete for incredible prizes and recognition!";
 
 exports.twelth = "Event Details:";
-exports.thirteenth = "Date: 25th and 26 Jan";
+exports.thirteenth = "Date: 25th and 26th Jan";
 exports.fourteenth = "Time: 10:00am to 6:00pm";
-exports.fifteenth = "Venue: [Main CFF]";
+exports.fifteenth = "Venue: Main CFF";
 exports.sixteenth = "Organized By: Microsoft Learn Students' Club (MLSC)";
 exports.seventeenth = "Theme: Azure AI Services";
 

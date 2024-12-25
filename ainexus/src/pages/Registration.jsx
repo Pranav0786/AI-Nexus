@@ -95,7 +95,7 @@ export const Registration = () => {
           <form onSubmit={handleFormSubmit} className="space-y-6">
             {/* User 1 */}
             <div>
-              <h2 className="text-gray-700 font-semibold mb-3">User 1 Details</h2>
+              <h2 className="text-gray-700 font-semibold mb-3">Personal Details</h2>
               <input
                 type="text"
                 placeholder="Name"
@@ -131,7 +131,10 @@ export const Registration = () => {
               <input  
                 type="file"
                 accept="image/*"
-                className="w-full p-1 mb-3 rounded border  border-gray-300 bg-white cursor-pointer"
+                className="w-full p-2 mb-3 rounded border border-gray-300 bg-gray-50 text-sm text-gray-700 
+                              file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 
+                              file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-700
+                              hover:file:bg-blue-200 cursor-pointer appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                 onChange={(e) => handleInputChange(e, 'user1', 'image')}
                 required
               />
@@ -148,7 +151,7 @@ export const Registration = () => {
               </button>
               {addUser2 && (
                 <div className="mt-6">
-                  <h2 className="text-gray-700 font-semibold mb-3">User 2 Details</h2>
+                  <h2 className="text-gray-700 font-semibold mb-3">Crew Member Details</h2>
                   <input
                     type="text"
                     placeholder="Name"
@@ -184,10 +187,14 @@ export const Registration = () => {
                   <input
                     type="file"
                     accept="image/*"
-                    className="w-full p-1 mb-3 rounded border border-gray-300 bg-white cursor-pointer"
+                    className="w-full p-2 mb-3 rounded border border-gray-300 bg-gray-50 text-sm text-gray-700 
+                              file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 
+                              file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-700
+                              hover:file:bg-blue-200 cursor-pointer appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                     onChange={(e) => handleInputChange(e, 'user2', 'image')}
                     required
                   />
+
                 </div>
               )}
             </div>
@@ -211,7 +218,10 @@ export const Registration = () => {
               <input
                 type="file"
                 accept="image/*"
-                className="w-full p-1 mb-3 rounded border border-gray-300 bg-white cursor-pointer"
+                className="w-full p-2 mb-3 rounded border border-gray-300 bg-gray-50 text-sm text-gray-700 
+                              file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 
+                              file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-700
+                              hover:file:bg-blue-200 cursor-pointer appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                 onChange={(e) => handleInputChange(e, null, 'paymentScreenshot')}
                 required
               />
