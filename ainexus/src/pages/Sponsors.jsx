@@ -31,7 +31,7 @@ const sponsors = [
 
 const Sponsors = () => {
   return (
-    <section id='sponsors' className="min-h-screen bg-gradient-to-br from-black via-red-950 to-black relative overflow-hidden py-20">
+    <section id='sponsors' className="min-h-screen bg-gradient-to-br from-black via-red-950 to-black relative overflow-hidden py-12">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
@@ -63,9 +63,9 @@ const Sponsors = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-red-500 to-red-300 bg-clip-text text-transparent mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-500 to-red-300 bg-clip-text text-transparent mb-6">
             Our Sponsors
           </h1>
           <p className="text-red-300/80 text-lg md:text-xl max-w-2xl mx-auto">
@@ -73,7 +73,7 @@ const Sponsors = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {sponsors.map((sponsor, index) => (
             <motion.div
               key={sponsor.id}
@@ -87,20 +87,20 @@ const Sponsors = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-red-500 via-red-600 to-red-700 rounded-2xl opacity-50 blur group-hover:opacity-70 transition-opacity duration-300" />
 
-                <div className="relative h-full backdrop-blur-sm bg-gradient-to-br from-gray-900/90 to-black/90 rounded-2xl p-8 border border-red-500/20">
+                <div className="relative h-full backdrop-blur-sm bg-gradient-to-br from-gray-900/90 to-black/90 rounded-2xl p-4 sm:p-6 border border-red-500/20">
                   <motion.div
                     className="absolute -top-2 -left-2"
                     animate={{ rotate: 360 }}
                     transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
                   >
-                    <Sparkles className="w-6 h-6 text-red-500/50" />
+                    <Sparkles className="w-5 h-5 text-red-500/50" />
                   </motion.div>
 
-                  <div className="absolute -top-3 right-4 px-4 py-1 bg-gradient-to-r from-red-700 to-red-600 rounded-full shadow-lg">
+                  <div className="absolute -top-3 right-4 px-3 py-1 bg-gradient-to-r from-red-700 to-red-600 rounded-full shadow-lg">
                     <span className="text-sm font-semibold text-white">{sponsor.tier}</span>
                   </div>
 
-                  <div className="relative h-40 mb-6 group-hover:scale-105 transition-transform duration-300">
+                  <div className="relative h-28 lg:h-32  mb-6 group-hover:scale-105 transition-transform duration-300">
                     <div className="absolute inset-0 bg-red-500/20 blur-2xl rounded-full scale-90 group-hover:bg-red-500/30 transition-colors duration-300" />
                     <img
                       src={sponsor.logo}
@@ -110,10 +110,10 @@ const Sponsors = () => {
                   </div>
 
                   <div className="text-center relative z-10">
-                    <h2 className="text-2xl font-bold bg-gradient-to-r from-white to-red-100 bg-clip-text text-transparent mb-3">
+                    <h2 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-white to-red-100 bg-clip-text text-transparent mb-3">
                       {sponsor.name}
                     </h2>
-                    <p className="text-red-300/80 mb-6 leading-relaxed">
+                    <p className="text-red-300/80 mb-6 text-sm sm:text-base leading-relaxed">
                       {sponsor.description}
                     </p>
 
@@ -121,7 +121,7 @@ const Sponsors = () => {
                       href={sponsor.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative inline-flex items-center px-6 py-2 group/button"
+                      className="relative inline-flex items-center px-5 py-2 group/button"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
