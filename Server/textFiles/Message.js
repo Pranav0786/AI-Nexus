@@ -17,7 +17,7 @@ exports.eleventh = "5. Team up with other participants, innovate, and compete fo
 exports.twelth = "Event Details:";
 exports.thirteenth = "Date: 25th and 26th Jan";
 exports.fourteenth = "Time: 10:00am to 6:00pm";
-exports.fifteenth = "Venue: Main CFF";
+exports.fifteenth = "Venue: Main CCF";
 exports.sixteenth = "Organized By: Microsoft Learn Students' Club (MLSC)";
 exports.seventeenth = "Theme: Azure AI Services";
 
