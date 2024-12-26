@@ -45,7 +45,7 @@ function Navbar() {
 
         {/* Centered Navigation links for desktop */}
         <nav className="hidden lg:flex justify-end">
-          <ul className="flex items-center gap-4 font-sans xl:text-xl text-white">
+          <ul className="flex items-center gap-4 font-sans xl:text-lg text-white uppercase">
             <li>
               <Link
                 to="home"
@@ -87,7 +87,7 @@ function Navbar() {
 
         {/* Mobile Menu Icon */}
         <button
-          className="lg:hidden p-2 text-white"
+          className="lg:hidden p-2 text-white "
           onClick={() => setNav(!nav)}
         >
           <FaBars className="text-white font-bold text-xl mr-1" />
@@ -103,7 +103,7 @@ function Navbar() {
           >
             &times;
           </button>
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-4 uppercase">
             <Link
               to="home"
               smooth={true}

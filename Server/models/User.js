@@ -24,6 +24,16 @@ const userSchema = new mongoose.Schema({
 });
 
 const teamSchema = new mongoose.Schema({
+    teamId: {
+        type: Number, 
+        required: true,
+        unique: true, 
+    },
+    track: {
+        type: String, 
+        enum: ["Novice", "Expert"], 
+        required: true,
+    },
     users: {
         type: [userSchema], // Array of users
         required: true,
@@ -40,11 +50,7 @@ const teamSchema = new mongoose.Schema({
         type: String, // Base64-encoded image of the screenshot
         required: true,
     },
-    teamId: {
-        type: Number, 
-        required: true,
-        unique: true, 
-    },
+    
 });
 
 const counterSchema = new mongoose.Schema({

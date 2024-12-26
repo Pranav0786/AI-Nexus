@@ -24,7 +24,7 @@ async function getNextTeamId() {
 
 exports.register = async (req, res) => {
     try {
-        const { user1, user2 , transactionId } = req.body;
+        const { user1, user2 , transactionId , track } = req.body;
         const paymentScreenshot = req.files["paymentScreenshot"]?.[0];
 
         if (!user1) {
@@ -43,6 +43,12 @@ exports.register = async (req, res) => {
             return res.status(400).json({
                 success: false,
                 message: "Payment screenshot is required.",
+            });
+        }
+        if (!track || !["Novice", "Expert"].includes(track)) {
+            return res.status(400).json({
+                success: false,
+                message: "Valid track ('Novice' or 'Expert') is required.",
             });
         }
 
@@ -109,11 +115,12 @@ exports.register = async (req, res) => {
         const teamId = await getNextTeamId();
 
         const team = await Team.create({
-            users: userInstances,
+            teamId,
+            track,
             type: isSolo ? "solo" : "team",
+            users: userInstances,
             transactionId ,
             paymentScreenshot: paymentScreenshot.buffer.toString("base64"),
-            teamId,
         });
 
         // Send emails to all registered users
