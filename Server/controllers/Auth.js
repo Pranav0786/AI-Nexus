@@ -1,7 +1,7 @@
 const multer = require("multer");
 const { User, Team , Counter} = require("../models/User");
 const { sendEmail } = require("./MailSender")
-const { first, second, third, forth, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelth, thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, eighteenth, nineteenth, twentieth, twentyFirst, twentySecond } = require("../textFiles/Message");
+const { first, second, track1 , third, forth, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelth, thirteenth, fourteenth, fifteenth, sixteenth, seventeenth, eighteenth, nineteenth, twentieth, twentyFirst, twentySecond } = require("../textFiles/Message");
 
 const storage = multer.memoryStorage() ;
 const upload = multer({ storage }) ;
@@ -125,7 +125,7 @@ exports.register = async (req, res) => {
 
         // Send emails to all registered users
         for (const user of users) {
-            const emailText = `Dear ${user.name}, \n\n${first} \n\n${second}: ${team.teamId} \n${third}${team.teamId}. ${forth} \n\n${fifth} \n${sixth} \n${seventh} \n${eighth} \n${ninth} \n${tenth} \n${eleventh} \n\n${twelth} \n${thirteenth} \n${fourteenth} \n${fifteenth} \n${sixteenth} \n${seventeenth} \n\n${eighteenth} \n\n${nineteenth} \n${twentieth} \n\n${twentyFirst} \n${twentySecond}`;
+            const emailText = `Dear ${user.name}, \n\n${first} \n\n${second}: ${team.teamId} \n${track1}: ${team.track} \n${third}${team.teamId}. ${forth} \n\n${fifth} \n${sixth} \n${seventh} \n${eighth} \n${ninth} \n${tenth} \n${eleventh} \n\n${twelth} \n${thirteenth} \n${fourteenth} \n${fifteenth} \n${sixteenth} \n${seventeenth} \n\n${eighteenth} \n\n${nineteenth} \n${twentieth} \n\n${twentyFirst} \n${twentySecond}`;
             await sendEmail(user.email, `Welcome to AI Nexus - Registration Confirmed`, emailText);
         }
 

@@ -1,6 +1,8 @@
 exports.first = "We are thrilled to confirm your registration for the AI Nexus event, proudly organized by the Microsoft Learn Students' Club (MLSC). This event is a platform to empower participants with AI knowledge, foster innovation, and provide hands-on experience in a collaborative and exciting environment.";
 
 exports.second = "Your Registration ID";
+exports.track1 = "Track" ;
+
 exports.third = "Your unique registration ID is ";
 exports.forth = "Please keep this ID handy, as you will need it for event access and participation.";
 
