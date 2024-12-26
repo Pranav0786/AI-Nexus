@@ -33,10 +33,13 @@ const FileUpload = ({ label, onChange, required }) => (
   </div>
 );
 
-export const R2 = () => {
+export const Registration = () => {
   const [addUser2, setAddUser2] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [track, setTrack] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
+  const [registrationMessage , setregistrationMessage] = useState(false) ;
 
   const [formData, setFormData] = useState({
     user1: {
@@ -86,6 +89,7 @@ export const R2 = () => {
   };
 
   const toggleModal = () => {
+    setregistrationMessage(false) ;
     setIsModalOpen(!isModalOpen);
   };
   const message = `First-year students should choose the Novice track, while students in the second, third, or fourth year should select the Expert track. Please note that if you are participating in a team, both teammates must be in the same track.`;
@@ -105,6 +109,8 @@ export const R2 = () => {
     formDataToSend.append('transactionId', formData.transactionId);
     formDataToSend.append('paymentScreenshot', formData.paymentScreenshot);
 
+    console.log(formDataToSend) ;
+    setIsLoading(true);
     try {
       const response = await fetch('http://localhost:5000/api/v1/register', {
         method: 'POST',
@@ -112,8 +118,12 @@ export const R2 = () => {
       });
 
       const result = await response.json();
+      setIsLoading(false);
+      setregistrationMessage(true) ;
       if (result.success) {
         toast.success( 'Registration successful!');
+        setModalMessage('Registration was successful! You can now proceed with the next steps.');
+        setIsModalOpen(true);
         setFormData({
           user1: { name: '', email: '', college: '', phone: '', image: null },
           user2: { name: '', email: '', college: '', phone: '', image: null },
@@ -138,6 +148,7 @@ export const R2 = () => {
           <h1 className="text-3xl md:text-4xl font-extrabold font-[Roboto] drop-shadow-lg text-red-800 mb-4 uppercase">Secure your spot</h1>
           <ToastContainer />
           <form onSubmit={handleFormSubmit} className="space-y-6">
+          {isLoading && <div className="loading-spinner">Loading...</div>} {/* Show loading spinner */}
             {/* User 1 */}
             <div>
               <h2 className="text-gray-700 font-bold mb-3">Personal Details</h2>
@@ -255,7 +266,7 @@ export const R2 = () => {
                 <button
                   type="button"
                   className="text-blue-500 hover:underline focus:outline-none"
-                  onClick={toggleModal}
+                  onClick={toggleModal }
                 >
                   Note: Track Information
                 </button>
@@ -266,8 +277,7 @@ export const R2 = () => {
             <Modal
               isOpen={isModalOpen}
               toggleModal={toggleModal}
-              title="Track Selection Information"
-              message={message}
+              message={ registrationMessage ? modalMessage : message}
             />
 
             {/* Payment */}
