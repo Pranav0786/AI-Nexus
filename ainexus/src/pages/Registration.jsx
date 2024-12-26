@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Modal from '../components/Modal';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import single from "../assests/single2.png";
@@ -35,6 +36,8 @@ const FileUpload = ({ label, onChange, required }) => (
 export const R2 = () => {
   const [addUser2, setAddUser2] = useState(false);
   const [track, setTrack] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const [formData, setFormData] = useState({
     user1: {
       name: '',
@@ -82,6 +85,10 @@ export const R2 = () => {
     }));
   };
 
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+  const message = `First-year students should choose the Novice track, while students in the second, third, or fourth year should select the Expert track. Please note that if you are participating in a team, both teammates must be in the same track.`;
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -225,10 +232,12 @@ export const R2 = () => {
                 </div>
               )}
             </div>
-
+            
             {/* Track Selection */}
             <div>
-              <label htmlFor="track" className="block text-gray-700 font-semibold mb-1 ml-1">Track</label>
+              <label htmlFor="track" className="block text-gray-700 font-semibold mb-1 ml-1">
+                Track
+              </label>
               <select
                 id="track"
                 name="track"
@@ -241,7 +250,25 @@ export const R2 = () => {
                 <option value="Novice">Novice</option>
                 <option value="Expert">Expert</option>
               </select>
+
+              <div className="mt-2">
+                <button
+                  type="button"
+                  className="text-blue-500 hover:underline focus:outline-none"
+                  onClick={toggleModal}
+                >
+                  Note: Track Information
+                </button>
+              </div>
             </div>
+
+            {/* Modal for displaying message */}
+            <Modal
+              isOpen={isModalOpen}
+              toggleModal={toggleModal}
+              title="Track Selection Information"
+              message={message}
+            />
 
             {/* Payment */}
             <div>
