@@ -6,20 +6,32 @@ const FAQ1 = () => {
 
   const FAQ1Data = [
     {
-      question: 'What is your return policy?',
-      answer: 'Our return policy allows returns within 30 days of purchase.'
+      question: 'Will there be any hands-on workshops?',
+      answer: 'Yes, there will be several workshops where participants can engage in hands-on learning with AI tools and frameworks.'
     },
     {
-      question: 'Do you offer international shipping?',
-      answer: 'Yes, we offer international shipping to most countries.'
+      question: 'Will I receive a certificate for attending AI NEXUS?',
+      answer: 'Yes, all participants will receive an e-certificate after the event from Global MLSA community and printed certificate from WCE MLSC.'
     },
     {
-      question: 'How can I track my order?',
-      answer: 'You will receive an email with tracking information once your order ships.'
+      question: 'How can I contact the organizers for more information?',
+      answer: 'You can email us at mlsc@walchandsangli.ac.in  or call +91 92841 24132.'
     },
     {
-      question: 'Do you accept gift cards?',
-      answer: 'Yes, we accept gift cards as payment.'
+      question: 'Do I need prior knowledge of AI to attend?',
+      answer: 'Not necessarily! AI NEXUS includes sessions for beginners, intermediate learners, and advanced professionals. Everyone is welcome to join and learn.'
+    },
+    {
+      question: 'What are the prizes for the winners?',
+      answer: 'Winners will receive cash prizes, goodies, certificates, and special recognition on the event website and social media.'
+    },
+    {
+      question: 'How do I stay updated about AI NEXUS?',
+      answer: 'Follow us on social handles given below and check your email for regular updates.'
+    },
+    {
+      question: 'What should I bring to the event?',
+      answer: 'Bring your registration confirmation, a valid photo ID, and a laptop if you are having one(we will be providing PC too ).'
     }
   ];
 

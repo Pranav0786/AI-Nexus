@@ -7,8 +7,10 @@ import {
   Mail,
   Phone,
   MapPin,
+  Youtube,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { FaDiscord, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -21,39 +23,39 @@ export default function Footer() {
             <h3 className="text-2xl font-bold font-[Roboto] text-green-400">WCE-MLSC</h3>
             <div className="flex space-x-4 ">
               <a
-                href="https://facebook.com"
-                className="text-gray-400  hover:text-green-400 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Facebook className="h-7 w-7" />
-                <span className="sr-only">Facebook</span>
-              </a>
-              <a
-                href="https://twitter.com"
+                href="https://www.linkedin.com/company/wce-mlsc/"
                 className="text-gray-400 hover:text-green-400 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Twitter className="h-7 w-7" />
-                <span className="sr-only">Twitter</span>
+                <FaLinkedin className="h-7 w-7" />
+                <span className="sr-only">LinkedIn</span>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://discord.com/invite/pYFknUjw"
                 className="text-gray-400 hover:text-green-400 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Instagram className="h-7 w-7" />
-                <span className="sr-only">Instagram</span>
+                <FaDiscord className="h-7 w-7" />
+                <span className="sr-only">LinkedIn</span>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.youtube.com/@WCEMLSC"
                 className="text-gray-400 hover:text-green-400 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Linkedin className="h-7 w-7" />
+                <Youtube className="h-7 w-7" />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+              <a
+                href="https://chat.whatsapp.com/FYOmgQpITOsCPtd84Eme0x"
+                className="text-gray-400 hover:text-green-400 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaWhatsapp className="h-7 w-7" />
                 <span className="sr-only">LinkedIn</span>
               </a>
             </div>
@@ -65,25 +67,25 @@ export default function Footer() {
               <li className="flex items-center text-gray-400 ">
                 <Mail className="h-5 w-5 mr-1 mt-1 text-green-400" />
                 <a
-                  href="mailto:contact@mlsc.com"
+                  href="mailto:mlsc@walchandsangli.ac.in"
                   className="hover:text-green-400 transition-colors  md:text-xl"
                 >
-                  contact@mlsc.com
+                  mlsc@walchandsangli.ac.in
                 </a>
               </li>
               <li className="flex items-center text-gray-400">
                 <Phone className="h-5 w-5 mr-1 mt-1 text-green-400" />
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+91 92841 24132"
                   className="hover:text-green-400 transition-colors  md:text-xl"
                 >
-                  +1 (234) 567-890
+                  +91 92841 24132
                 </a>
               </li>
               <li className="flex items-start text-gray-400 ">
                 <MapPin className="h-5 w-5 mr-1 mt-1 text-green-400 " />
                 <span className="hover:text-green-400 transition-colors   md:text-xl">
-                  Sangli, India
+                  WCE Sangli, India
                 </span>
               </li>
             </ul>
