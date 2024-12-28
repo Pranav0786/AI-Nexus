@@ -32,7 +32,7 @@ export default function Footer() {
                 <span className="sr-only">LinkedIn</span>
               </a>
               <a
-                href="https://discord.com/invite/pYFknUjw"
+                href="https://discord.gg/UpDUhTH55A"
                 className="text-gray-400 hover:text-red-400 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"

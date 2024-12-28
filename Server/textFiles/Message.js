@@ -6,6 +6,9 @@ exports.track1 = "Track" ;
 exports.third = "Your unique registration ID is ";
 exports.forth = "Please keep this ID handy, as you will need it for event access and participation.";
 
+exports.m1 = "To stay updated and receive further instructions, please join the WhatsApp group by clicking the link below." ;
+exports.m2 = "https://chat.whatsapp.com/JxDJ9OCp9nmHKfhmXcJlcd" ;
+
 exports.fifth = "Event Highlights:";
 exports.sixth = "Learn and Implement Sessions:";
 exports.seventh = "1. Gain in-depth insights into artificial intelligence concepts through expert-led workshops.";
