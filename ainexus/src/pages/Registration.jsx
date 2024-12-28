@@ -112,7 +112,7 @@ export const Registration = () => {
     console.log(formDataToSend) ;
     setIsLoading(true);
     try {
-      const response = await fetch('https://ai-nexus-rdla.onrender.com/api/v1/register', {
+      const response = await fetch('http://localhost:5000/api/v1/register', {
         method: 'POST',
         body: formDataToSend,
       });
@@ -122,7 +122,7 @@ export const Registration = () => {
       setregistrationMessage(true) ;
       if (result.success) {
         toast.success( 'Registration successful!');
-        setModalMessage('Registration was successful! You can now proceed with the next steps.');
+        setModalMessage('Registration was successful! We are excited to see you at the event!');
         setIsModalOpen(true);
         setFormData({
           user1: { name: '', email: '', college: '', phone: '', image: null },
