@@ -183,6 +183,7 @@ export const Registration = () => {
                 value={formData.user1.phone}
                 onChange={(e) => handleInputChange(e, 'user1', 'phone')}
                 required
+                
               />
               <FileUpload
                 label="Upload College Id"

@@ -36,7 +36,7 @@ const FAQ1 = () => {
   ];
 
   return (
-    <section id='FAQ1' className="FAQ1 m-10 w-10/12 lg:w-8/12 mx-auto ">
+    <section id='faq' className=" m-10 w-10/12 lg:w-8/12 mx-auto ">
       <h2 className="text-4xl font-[Roboto] md:text-5xl font-bold text-red-400 mb-4 text-center">FAQS</h2>
       <div className="accordion__list space-y-4 ">
         {FAQ1Data.map((FAQ, index) => (
@@ -60,7 +60,7 @@ const FAQ1 = () => {
               <div className="px-6 pb-6 space-y-3">
                 <div className="h-px bg-red-950/50 mb-4"></div>
                 <div className="flex items-center space-x-3">
-                  <p className="text-gray-400">{FAQ.answer}</p>
+                  <p className="text-gray-400 ">{FAQ.answer}</p>
                 </div>
               </div>
             )}

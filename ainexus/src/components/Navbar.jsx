@@ -14,9 +14,7 @@ function Navbar() {
         setScroll(false);
       }
     };
-
     window.addEventListener('scroll', changeBackground);
-
     return () => {
       window.removeEventListener('scroll', changeBackground);
     };
