@@ -5,7 +5,8 @@ import { Link } from 'react-scroll';
 function Header() {
     return (
         <div id={styles.main} >
-            <div className={styles['header-heading']}>
+            <div 
+            className={styles['header-heading']}>
                 <h1>
                     <span>AI</span> NEXUS
                 </h1>

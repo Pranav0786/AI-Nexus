@@ -142,13 +142,15 @@ export const Registration = () => {
   };
 
   return (
-    <div id='register' className="min-h-screen w-full flex flex-col items-center">
-      <div className='flex flex-col-reverse lg:flex-row items-center lg:w-11/12'>
-        <div className="relative m-10 bg-white bg-opacity-30 backdrop-blur-md p-6 rounded-md shadow-2xl border border-gray-300 w-11/12 md:w-8/12 lg:w-6/12">
+    <div id='register'
+    data-aos="zoom-out-up"
+    className=" min-h-screen w-full flex flex-col items-center">
+      <div data-aos="zoom-out-up" className='flex flex-col-reverse lg:flex-row items-center lg:w-11/12'>
+        <div data-aos="zoom-out-up" className="relative m-10 bg-white bg-opacity-30 backdrop-blur-md p-6 rounded-md shadow-2xl border border-gray-300 w-11/12 md:w-8/12 lg:w-6/12">
           <h1 className="text-3xl md:text-4xl font-extrabold font-[Roboto] drop-shadow-lg text-red-800 mb-4 uppercase">Secure your spot</h1>
           <ToastContainer />
-          <form onSubmit={handleFormSubmit} className="space-y-6">
-          {isLoading && <div className="loading-spinner">Loading...</div>} {/* Show loading spinner */}
+          <form onSubmit={handleFormSubmit} className="space-y-6 ">
+          {isLoading && <div className="spinner"></div>} {/* Show loading spinner */}
             {/* User 1 */}
             <div>
               <h2 className="text-gray-700 font-bold mb-3">Personal Details</h2>
@@ -315,7 +317,10 @@ export const Registration = () => {
         </div>
 
         {/* Side Image */}
-        <div className='lg:w-1/2  flex justify-center '>
+        <div 
+        data-aos="zoom-in-up"
+        data-aos-anchor-placement="bottom-bottom"
+        className='lg:w-1/2  flex justify-center '>
           <img
             src={regImage}
             alt="Payment Illustration"

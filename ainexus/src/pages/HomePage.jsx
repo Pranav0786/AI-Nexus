@@ -9,7 +9,7 @@ import { Registration } from './Registration'
 
 export const HomePage = () => {
   return (
-    <div id='home' className='overflow-hidden'>
+    <div id='home' className='overflow-hidden '>
         <Navbar />
         <Header />
         <EventDetails />
