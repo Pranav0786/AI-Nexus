@@ -36,11 +36,15 @@ const FAQ1 = () => {
   ];
 
   return (
-    <section id='faq' className=" m-10 w-10/12 lg:w-8/12 mx-auto ">
+    <section id='faq'
+    data-aos="zoom-out-up"
+    className=" m-10 w-10/12 lg:w-8/12 mx-auto ">
       <h2 className="text-4xl font-[Roboto] md:text-5xl font-bold text-red-400 mb-4 text-center">FAQS</h2>
       <div className="accordion__list space-y-4 ">
         {FAQ1Data.map((FAQ, index) => (
-          <div key={index}  className="bg-red-950/20 rounded-lg border border-red-950/50">
+          <div key={index}  
+          data-aos="zoom-out-up"
+          className="bg-red-950/20 rounded-lg border border-red-950/50">
             <button 
               onClick={() => setExpandedSession(expandedSession === index ? null : index)}
               className="w-full text-left p-6 hover:bg-red-950/30 transition-colors"

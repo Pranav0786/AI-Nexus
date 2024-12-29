@@ -3,7 +3,9 @@ import React from 'react';
 const Modal = ({ isOpen, toggleModal, title, message }) => {
   return (
     isOpen && (
-      <div className="fixed inset-0 flex justify-center items-center z-50 overflow-hidden 
+      <div 
+      data-aos="zoom-out-down"
+      className="fixed inset-0 flex justify-center items-center z-50 overflow-hidden 
         bg-black bg-opacity-50 motion-safe:animate-fadeIn backdrop-blur-sm">
         <div
           className="border border-blue-500 p-6 rounded-lg w-10/12 md:w-3/5 

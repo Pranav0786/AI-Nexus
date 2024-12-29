@@ -12,7 +12,9 @@ const sponsors = [
 
 const Sponsors = () => {
   return (
-    <section id="sponsors" className=" py-12 ">
+    <section 
+    data-aos="fade-up" 
+    id="sponsors" className=" py-12 overflow-hidden">
       <div className="flex flex-col container mx-auto px-4 text-center mt-10 md:mt-20 mb-20">
         <h1 className="text-3xl md:text-5xl font-extrabold font-[Roboto] drop-shadow-lg text-red-800 mb-8 uppercase">
           Sponsors
@@ -21,6 +23,8 @@ const Sponsors = () => {
           <div className="grid grid-cols-1  gap-8 items-center justify-center ">
             {sponsors.map((sponsor) => (
               <div
+                data-aos="zoom-out-up"
+                data-aos-anchor-placement="bottom-bottom"
                 key={sponsor.id}
                 className="relative bg-[rgb(105,122,132)] shadow-lg rounded-xl p-3 hover:scale-105 transition-transform duration-300"
               >

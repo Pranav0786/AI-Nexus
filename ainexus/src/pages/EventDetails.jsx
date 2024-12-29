@@ -92,10 +92,12 @@ export default function EventDetails() {
   return (
     <div id='about' className="min-h-screen overflow-hidden bg-gradient-to-br from-black via-red-950 to-gray-950">
       <div
-      data-aos="fade-up"
+      data-aos="zoom-out-up"
       className="container mx-auto px-4 py-12 ">
         {/* Event Header */}
-        <div className="text-center mb-12">
+        <div 
+        data-aos="zoom-out-up"
+        className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-[Roboto] drop-shadow-lg font-bold text-red-400 mb-4">
             AI NEXUS
           </h1>
@@ -105,7 +107,7 @@ export default function EventDetails() {
         </div>
 
         {/* Main Event Card */}
-        <div data-aos="fade-up" className="max-w-4xl mx-auto">
+        <div data-aos="zoom-out-up" className="max-w-4xl mx-auto">
           <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-red-950">
             {/* Event Details Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -124,7 +126,7 @@ export default function EventDetails() {
             </div>
 
             {/* Objectives Section */}
-            <div data-aos="fade-up" className="mb-8">
+            <div data-aos="zoom-out-up" className="mb-8">
               <button 
                 onClick={() => setExpandedObjectives(!expandedObjectives)}
                 className="w-full text-left bg-red-950/20 rounded-lg p-6 border border-red-950/50 hover:bg-red-950/30 transition-colors"
@@ -140,7 +142,7 @@ export default function EventDetails() {
                 </div>
               </button>
               {expandedObjectives && (
-                <div className="mt-4 space-y-4 p-4 bg-black/20 rounded-lg border border-red-950/30">
+                <div data-aos="zoom-out-up" className="mt-4 space-y-4 p-4 bg-black/20 rounded-lg border border-red-950/30">
                   {objectives.map((objective, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-red-400 rounded-full"></div>
@@ -153,11 +155,11 @@ export default function EventDetails() {
 
             {/* Sessions Timeline */}
             <div 
-            data-aos="fade-up"
+            data-aos="zoom-out-up"
             className="mb-8 space-y-4">
               <h2 className="text-2xl font-bold text-red-400 mb-6 text-center font-[Roboto]">Event Schedule</h2>
               {sessions.map((session, index) => (
-                <div key={index} data-aos="fade-up"
+                <div key={index} data-aos="zoom-out-up"
                 className="bg-red-950/20 rounded-lg border border-red-950/50">
                   <button 
                     onClick={() => setExpandedSession(expandedSession === index ? null : index)}
@@ -176,7 +178,7 @@ export default function EventDetails() {
                     </div>
                   </button>
                   {expandedSession === index && (
-                    <div className="px-6 pb-6 space-y-3">
+                    <div data-aos="zoom-out-up" className="px-6 pb-6 space-y-3">
                       <div className="h-px bg-red-950/50 mb-4"></div>
                       {session.details.map((detail, idx) => (
                         <div key={idx} className="flex items-center space-x-3">
@@ -191,7 +193,7 @@ export default function EventDetails() {
             </div>
 
             {/* Prizes & Incentives */}
-            <div className="mb-8">
+            <div data-aos="zoom-out-up" className="mb-8">
               <button 
                 onClick={() => setExpandedPrize(!expandedPrize)}
                 className="w-full text-left bg-red-950/20 rounded-lg p-6 border border-red-950/50 hover:bg-red-950/30 transition-colors"
@@ -206,7 +208,7 @@ export default function EventDetails() {
                 </div>
               </button>
               {expandedPrize && (
-                <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div data-aos="zoom-out-up" className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                   {prizes.map((prize, index) => (
                     <div key={index} className="bg-black/20 rounded-lg p-4 border border-red-950/30">
                       <h4 className="text-red-400 font-semibold mb-1">{prize.title}</h4>
@@ -218,7 +220,7 @@ export default function EventDetails() {
             </div>
 
             {/* Registration */}
-            <div className="text-center">
+            <div data-aos="zoom-out-up" className="text-center">
               <div className="mb-6">
                 <h3 className="text-xl font-semibold text-red-400 mb-2 font-[Roboto]">Ready to Innovate?</h3>
                 <p className="text-gray-400">Join us for this immersive AI learning experience</p>
@@ -239,13 +241,13 @@ export default function EventDetails() {
           {/* Additional Info Cards */}
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
             <div 
-            data-aos="fade-left"
+            data-aos="zoom-out-left"
             className="bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-red-950">
               <h3 className="text-xl font-semibold text-red-400 mb-3 font-[Roboto]">Team Size</h3>
               <p className="text-gray-400">1-2 members per team</p>
             </div>
             <div 
-            data-aos="fade-right"
+            data-aos="zoom-out-right"
             className="bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-red-950">
               <h3 className="text-xl font-semibold text-red-400 mb-3 font-[Roboto]">Requirements</h3>
               <p className="text-gray-400">Basic programming knowledge & laptop</p>
