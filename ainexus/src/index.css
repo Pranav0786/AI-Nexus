@@ -57,6 +57,23 @@ body {
 }
 
 
+
+/* Hide number input spinners */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* For Firefox */
+}
+
+
+
+
+
 .spinner {
   position: fixed;
   top: 0;
@@ -86,19 +103,4 @@ body {
   100% {
     transform: rotate(360deg);
   }
-}
-
-
-
-
-/* Hide number input spinners */
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  appearance: none;
-  margin: 0;
-}
-
-input[type='number'] {
-  -moz-appearance: textfield; /* For Firefox */
 }
