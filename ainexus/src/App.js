@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { initAOS } from "./components/aosConfig";
 import Loader from "./components/Loader/Loader";
-import LandingPage from "./components/Landing/Landing";
 
 function App() {
   const [showLoader, setShowLoader] = useState(true);
@@ -23,7 +22,6 @@ function App() {
       ) : (
         <Routes>
           <Route path="/" element={<HomePage />} />
-          {/* <Route path="/" element={<LandingPage  />} /> */}
         </Routes>
       )}
     </>
