@@ -96,7 +96,7 @@ export default function Footer() {
         <div className="mt-4  pt-4 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center md:space-y-0">
             <p className="text-sm text-gray-400">
-              &copy; {new Date().getFullYear()} Microsoft Learn Student Chapter.
+              &copy; {new Date().getFullYear()} Microsoft Learn Student Club.
               All rights reserved.
             </p>
           </div>
