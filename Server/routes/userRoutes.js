@@ -4,6 +4,6 @@ const { register, uploadMiddleware , getUserDetails  } = require("../controllers
 const router = express.Router();
 
 router.post("/register", uploadMiddleware, register);
-router.get("/user/:email", getUserDetails);
+router.get("/teams/:teamId", getUserDetails);
 
 module.exports = router;

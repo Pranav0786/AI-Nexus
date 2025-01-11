@@ -148,50 +148,16 @@ exports.register = async (req, res) => {
 
 
 exports.getUserDetails = async (req, res) => {
+    const { teamId } = req.params;
     try {
-        const { email } = req.params;
-
-        if (!email) {
-            return res.status(400).json({
-                success: false,
-                message: "Email is required",
-            });
+        const team = await Team.findOne({ teamId: teamId }).exec();
+        
+        if (!team) {
+        return res.status(404).json({ message: 'Team not found' });
         }
 
-        // Find the user by email
-        const user = await User.findOne({ email });
-
-        if (!user) {
-            return res.status(404).json({
-                success: false,
-                message: "User not found",
-            });
-        }
-
-        // Check if the user is part of any team
-        const team = await Team.findOne({ "users.email": email });
-
-        // Respond with user and team data (if available)
-        if (team) {
-            return res.status(200).json({
-                success: true,
-                message: "User and team data fetched successfully",
-                user,
-                team,
-            });
-        }
-
-        // Respond with user data only if no team is found
-        return res.status(200).json({
-            success: true,
-            message: "User data fetched successfully",
-            user,
-        });
+        res.status(200).json(team); 
     } catch (error) {
-        console.error("Error fetching user details:", error);
-        return res.status(500).json({
-            success: false,
-            message: "An error occurred while fetching user details",
-        });
+        res.status(500).json({ message: 'Server error', error });
     }
 };
