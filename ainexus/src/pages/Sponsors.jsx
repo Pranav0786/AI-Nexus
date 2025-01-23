@@ -7,6 +7,7 @@ const sponsors = [
   {
     id: 1,
     logo: img1,
+    link : "http://www.ignitiozealous.co.in/"
   }
 ];
 
@@ -28,12 +29,14 @@ const Sponsors = () => {
                 key={sponsor.id}
                 className="relative bg-[rgb(105,122,132)] shadow-lg rounded-xl p-3 hover:scale-105 transition-transform duration-300"
               >
-                <img
-                  src={sponsor.logo}
-                  alt={`Sponsor ${sponsor.id} Logo`}
-                  className="w-fit h-auto md:h-80 object-cover rounded-md"
-                  style={{ boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)' }}
-                />
+                <a href={sponsor.link}>
+                  <img
+                    src={sponsor.logo}
+                    alt={`Sponsor ${sponsor.id} Logo`}
+                    className="w-fit h-auto md:h-80 object-cover rounded-md"
+                    style={{ boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)' }}
+                  />
+                </a>
               </div>
             ))}
           </div>
