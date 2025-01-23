@@ -6,6 +6,11 @@ import single from "../assests/single2.png";
 import double from "../assests/double2.png";
 import regImage from "../assests/robo.png";
 
+{/* btu --> div 
+  disable 
+  res open -> closed
+  */}
+
 const InputField = ({ label, type, placeholder, value, onChange, required }) => (
   <div className="mb-3">
     <label className="block text-gray-700 font-semibold mb-1 ml-1">{label}</label>
@@ -16,6 +21,7 @@ const InputField = ({ label, type, placeholder, value, onChange, required }) => 
       value={value}
       onChange={onChange}
       required={required}
+      disabled
     />
   </div>
 );
@@ -144,12 +150,14 @@ export const Registration = () => {
   return (
     <div id='register'
     data-aos="zoom-out-up"
-    className=" min-h-screen w-full flex flex-col items-center">
+    className="min-h-screen w-full flex flex-col items-center">
       <div data-aos="zoom-out-up" className='flex flex-col-reverse lg:flex-row items-center lg:w-11/12'>
         <div data-aos="zoom-out-up" className="relative m-10 bg-white bg-opacity-30 backdrop-blur-md p-6 rounded-md shadow-2xl border border-gray-300 w-11/12 md:w-8/12 lg:w-6/12">
           <h1 className="text-3xl md:text-4xl font-extrabold font-[Roboto] drop-shadow-lg text-red-800 mb-4 uppercase">Secure your spot</h1>
           <ToastContainer />
-          <form onSubmit={handleFormSubmit} className="space-y-6 ">
+          <form 
+          onSubmit={handleFormSubmit}
+           className="space-y-6 ">
           {isLoading && <div className="spinner"></div>} {/* Show loading spinner */}
             {/* User 1 */}
             <div>
@@ -191,6 +199,7 @@ export const Registration = () => {
                 label="Upload College Id"
                 onChange={(e) => handleInputChange(e, 'user1', 'image')}
                 required
+                disabled
               />
             </div>
 
@@ -242,6 +251,7 @@ export const Registration = () => {
                     label="Upload College ID"
                     onChange={(e) => handleInputChange(e, 'user2', 'image')}
                     required
+                    disabled
                   />
                 </div>
               )}
@@ -303,16 +313,18 @@ export const Registration = () => {
                 label="Upload Payment Screenshot"
                 onChange={(e) => handleInputChange(e, null, 'paymentScreenshot')}
                 required
+                disabled
               />
             </div>
 
-            {/* Submit Button */}
-            <button
+            {/* Submit Button */} 
+            
+            <div
               type="submit"
-              className="w-full bg-gradient-to-r from-red-600 via-red-800 to-black text-white px-6 py-3 rounded font-extrabold text-xl shadow-md hover:shadow-lg hover:scale-105 transform transition-all duration-300"
+              className="w-full text-center bg-gradient-to-r from-red-600 via-red-800 to-black text-white px-6 py-3 rounded font-extrabold text-xl shadow-md hover:shadow-lg  transform transition-all duration-300"
             >
-              Register Now
-            </button>
+              Registrations are closed
+            </div>
           </form>
         </div>
 
